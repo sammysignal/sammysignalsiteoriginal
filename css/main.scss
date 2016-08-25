@@ -47,3 +47,12 @@ $on-laptop:        800px;
 .footer-col-2 { width: -webkit-calc(25% - (30px / 2)); width: calc(25% - (30px / 2)); }
 
 .footer-col-3 { width: -webkit-calc(45% - (30px / 2)); width: calc(45% - (30px / 2)); }
+
+
+.wrapper {
+  max-width: -webkit-calc(800px - (10px * 2)); max-width: calc(800px - (10px * 2));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 30px;
+  padding-left: 30px;
+}
