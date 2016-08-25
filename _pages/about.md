@@ -1,12 +1,12 @@
 ---
 layout: page
 title: About
-subtitle: I am a smart heading.
+#subtitle: I am a smart heading.
 desc: About me.
 permalink: /about/
 ---
-
-<div class="pretty-links">
+<p>Coming soon!</p>
+<!-- <div class="pretty-links">
 
 <div class="lead lead-about">Some intro text that is eye catching and should put you reader at ease and confident in your skills.
 </div>
@@ -75,4 +75,4 @@ miseris. Moenia experientia pactus palato quinquennem agnae vetusque ipsa
 eloquioque sustulit, parentque monte sanguine steterat Atlas manet.
 
 </div>
-
+ -->
