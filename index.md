@@ -3,9 +3,12 @@ layout: default
 ---
 
 <div class="lead pretty-links">
-  Hi! this is just a sample **intro text**. You would normally put your [full name](about/) here and say something *smart* about yourself.
+  Hi There! My name is Sameer 'Sammy' Mehra, and I am a Senior at Harvard University,
+  where I study Computer Science.
 
-  This could also be the good place to say were you are coming from, what you [do for a living](work/) and maybe what you are [interested in](projects/). You might also be [writing](articles/) about stuff.
+  In my free time I like to build silly computer programs and listen to Jazz. I am 
+  hoping to work in Software Engineering when I graduate because I love to create useful
+  products and make the world more user-friendly. 
 
-  But after all this is your site and I'm just a **placeholder text** so what would i know about some *home page content*.
+  Thanks for stopping by!
 </div>
