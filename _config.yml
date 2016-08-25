@@ -3,23 +3,22 @@
 # Site settings
 title: Jackal               # used for the html title of every page
 desc: >
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Personal website for Sameer 'Sammy' Mehra. Thanks for stopping
+  by!
 
-url: http://jackal.com      # put your website hosting url here
+url: http://sameermehra.com      # put your website hosting url here
 baseurl: ''                 # the subpath of your site, e.g. /blog
 permalink: /:year/:title/   # how should we display posts url
 
 # Meta settings
-email: jackal@gmail.com
-author: The Jackal
-twitter_username: clenemt
-github_username: clenemt
-github_source: jackal
+email: sammysignal@gmail.com
+author: Sameer Mehra
+twitter_username: sameer_was_heer
+github_username: sammysignal
+github_source: sammysignal.github.io
 
 # Put your ga tracking code below
-google_analytics: 'UA-XXXXXXXX-X'
+google_analytics: 'UA-83141737-1'
 
 # Pagination settings
 paginate: 5                           # number of posts to show per page
