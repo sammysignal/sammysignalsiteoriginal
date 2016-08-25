@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="lead pretty-links">
-  Hi There! My name is Sameer 'Sammy' Mehra, and I am a Senior at Harvard University,
+  Hi There! My name is Sameer 'Sammy' Mehra, and I am a senior at Harvard University,
   where I study Computer Science.
 
   In my free time I like to build silly computer programs and listen to Jazz. I am 
