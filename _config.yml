@@ -18,7 +18,7 @@ github_username: sammysignal
 github_source: sammysignal.github.io
 
 # Put your ga tracking code below
-google_analytics: 'UA-83141737-1'
+google_analytics: 'UA-83124629-1'
 
 # Pagination settings
 paginate: 5                           # number of posts to show per page
