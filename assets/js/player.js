@@ -48,37 +48,111 @@ var makeAPIMove = function() {
   
 };
 
+var charCount = function(str, c) {
+  var count = 0;
+  for (var i = 0 ; i < str.length; i++) {
+    if (str[i] == c) {
+      count ++;
+    }
+  }
+  return count;
+}
+
+var isWhite = function(b_o_w) {
+  if (b_o_w == 'w') { 
+    return true;
+  }
+  return false;
+}
+
+var otherTurn = function(t) {
+  if (t == 'b') {
+    return 'w';
+  }
+  return 'b'
+}
+
 var makeRandomMove = function() {
   var possibleMoves = game.moves();
   var randomIndex = Math.floor(Math.random() * possibleMoves.length);
   game.move(possibleMoves[randomIndex]);
 }
 
-var countPieces = function(fen, turn) {
+var centerControl = function(fen, turn) {
   var p;
-  if (turn == 'b') {
-    p = pieces;
-  } else {
-    p = piecesB;
-  }
-  var counter = 0
-  for (var i = 0; i < p.length; i++) {
-    for (var j = 0; j < fen.length; j++) {
-      if (fen[j] == p[i]) { 
-        counter += values[p[i].toUpperCase()];
+  // if (isWhite(turn)) {
+  //   p = pieces;
+  // } else {
+  //   p = piecesB
+  // }
+  var parts = fen.split(' ')[0].split("/");
+  var total = 0;
+  for (var i = 0 ; i < 8; i++) {
+    for (var k = 0 ; k < pieces.length ; k++) {
+      //console.log(values[pieces[k]]);
+      if (isWhite(turn)) {
+        total = total + (i-3.5)*( values[pieces[k]]*charCount(parts[i], pieces[k]) )
+      } else {
+        total = total - (i-3.5)*( values[pieces[k]]*charCount(parts[i], piecesB[k]) )
       }
+      
     }
+    // total = total + charCount(parts[i], 'P');
+    // total = total + charCount(parts[i], 'N');
+    // total = total + charCount(parts[i], 'B');
+    // total = total + charCount(parts[i], 'R');
+    // total = total + charCount(parts[i], 'Q');
   }
-  return (counter / (8+10+6+6+9));
+  return total;
 }
 
-var heuristic = function() {
+var countPieces = function(fen, turn) {
+  var sum_b = 0;
+  var sum_w = 0;
+  for (var j = 0; j < fen.length; j++) {
+    // if lowercase
+    if ("A" <= fen[j] && fen[j] <= "Z" && fen[j] != "K") {
+      sum_w = sum_w + values[fen[j]]
+    }
+    if ("a" <= fen[j] && fen[j] <= "z" && fen[j] != "k") {
+      sum_b = sum_b + values[fen[j].toUpperCase()]
+    }
+  }
+  if (turn == 'w') {
+    return sum_w;
+  } else {
+    return sum_b;
+  }
+  return -1;
+  // var p;
+  // if (turn == 'b') {
+  //   p = pieces;
+  // } else {
+  //   p = piecesB;
+  // }
+  // var counter = 0
+  // for (var i = 0; i < p.length; i++) {
+  //   for (var j = 0; j < fen.length; j++) {
+  //     if (fen[j] == p[i]) { 
+  //       counter += values[p[i].toUpperCase()];
+  //     }
+  //   }
+  // }
+  // return (counter / (39));
+}
+
+// if still early in game, castled is good.
+// if 
+var heuristic = function(t="b") {
   var possibleMoves = game.moves();
   var fen = game.fen().split(' ');
   // fen string
   var f = fen[0];
   // whose turn, either 'b' or 'w;
   var turn = fen[1];
+  if (t == 'b' || t == 'w') {
+    turn = t;
+  }
   // any subset of KQkq, representing black or white castling king or queen side.
   // White is uppercase.
   var canCastle = fen[2];
@@ -88,43 +162,65 @@ var heuristic = function() {
   var plies = fen[4];
   var moveCounter = fen[5];
 
-  return countPieces(f, turn);
+
+  return (countPieces(f, turn) - countPieces(f, otherTurn(turn))) + 
+         (0.01)*(centerControl(f, turn));
 }
 
-var makeIntelligentMove = function(depth) {
-  if (depth <= 0) {
-    makeRandomMove();
-    return;
-  }
+var makeIntelligentMove = function() {
   var possibleMoves = game.moves();
+  console.log(possibleMoves);
   var fen = game.fen().split(' ');
   // fen string
   var f = fen[0];
   // whose turn, either 'b' or 'w;
   var turn = fen[1];
 
-  var bestHeuristic = 0;
-  var bestMove;
+  var bestHeuristic = 10000;
+  var bestMove, testH;
   for (var m=0; m < possibleMoves.length; m++) {
     // make hypothetical move
+    console.log(game.turn());
+    console.log(game.fen());
     game.move(possibleMoves[m]);
-    // let other player make move
-    makeIntelligentMove(depth-1);
-    // see the value of this state
-    var testH = heuristic();
-    if (testH > bestHeuristic) {
-      console.log(testH);
-      bestHeuristic = testH;
-      bestMove = possibleMoves[m];
+    console.log(game.turn());
+    console.log(game.fen());
+    var possibleMovesOther = game.moves();
+    console.log(possibleMovesOther);
+    var bestHeuristicOpp = -10000;
+    var bestOppMove, testHOpp;
+    for (var n=0; n < possibleMovesOther.length; n++) {
+      console.log("trying " + possibleMovesOther[n]);
+      game.move(possibleMovesOther[n]);
+      // see the value of this state
+      testHopp = heuristic(otherTurn(turn));
+      if (testHopp > bestHeuristicOpp) {
+        console.log(testHopp);
+        bestHeuristicOpp = testHopp;
+        bestOppMove = possibleMovesOther[n];
+      }
+      console.log(game.fen());
+      var u = game.undo();
+      console.log(game.fen());
+      console.log(u);
     }
-    game.undo();
-    game.undo();
+    if (bestHeuristicOpp < bestHeuristic) {
+      bestHeuristic = bestHeuristicOpp;
+      bestMove = possibleMoves[m]
+    }
+    var u2 = game.undo();
+    console.log(u2);
   }
-
+  console.log(bestMove);
   // Make the move!
   game.move(bestMove);
-  board.position(game.fen());
+  console.log(game.board())
 }
+
+var mover = function() {
+
+}
+
 
 var onDrop = function(source, target) {
   // see if the move is legal
@@ -140,7 +236,8 @@ var onDrop = function(source, target) {
   // make random legal move for black
   window.setTimeout(function(){
     //makeRandomMove();
-    makeIntelligentMove(2);
+    makeIntelligentMove();
+    board.position(game.fen());
   }, 250);
 };
 
@@ -160,7 +257,18 @@ var cfg = {
 };
 board = ChessBoard('board', cfg);
 
+// $(document).ready(function(){
+//   console.log("loaded!");
+//   while (!game.game_over()) {
+//     window.setTimeout(function(){
+//       //makeRandomMove();
+//       makeIntelligentMove();
+//       board.position(game.fen());
+//     }, 250);
+//   }
+// });
 
+console.log("vars");
 // var onChange = function(oldPos, newPos) {
 //   console.log("Position changed:");
 //   console.log("Old position: " + ChessBoard.objToFen(oldPos));
