@@ -208,18 +208,11 @@ var makeBestMove = function () {
     game.ugly_move(bestMove);
     board.position(game.fen());
     // renderMoveHistory(game.history());
-    if (game.game_over()) {
-        alert('Game over');
-    }
 };
 
 
 var positionCount;
 var getBestMove = function (game) {
-    if (game.game_over()) {
-        alert('Game over');
-    }
-
     positionCount = 0;
     //var depth = parseInt($('#search-depth').find(':selected').text());
     var depth = 3;
@@ -636,6 +629,17 @@ var toggle = function() {
 //     }, 250);
 //   }
 // });
+
+var undo = function() {
+  if (game.turn() == 'w') {
+    game.undo();
+    game.undo();
+    board.position(game.fen());
+  }
+  document.getElementById("win").style.display = "none";
+  document.getElementById("lose").style.display = "none";
+  document.getElementById("draw").style.display = "none";
+}
 
 console.log("vars");
 // var onChange = function(oldPos, newPos) {
