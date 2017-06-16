@@ -22,9 +22,11 @@
   margin: auto;
 }
 
-.site-nav {
-  width: 86%;
-}
+/*
+*.site-nav {
+*  width: 30%;
+*}
+*/
 
 .site-logo:hover {
   box-shadow: 0 0 6px #4072AF;
@@ -33,4 +35,31 @@
 
 .site-footer {
   margin: 3rem 0 6rem;
+}
+
+.lead.pretty-links {
+  margin-top:20px;
+}
+
+.site-profile {
+  width: 184px;
+  margin: 0 0 0 20px;
+}
+
+#asterisk {
+  color: #4072AF;
+  text-decoration: none;
+  background: none;
+}
+
+#ai-and-game-playing {
+  color: #333;
+}
+
+.music-iframe {
+  margin-left: 10px;
+}
+
+.music-item {
+  height: 160px;
 }

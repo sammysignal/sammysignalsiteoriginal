@@ -13,7 +13,7 @@ permalink: /:year/:title/   # how should we display posts url
 # Meta settings
 email: sammysignal@gmail.com
 author: Sameer Mehra
-twitter_username: sameer_was_heer
+linkedin_username: sameer-mehra
 github_username: sammysignal
 github_source: sammysignal.github.io
 
@@ -22,24 +22,25 @@ google_analytics: 'UA-83124629-1'
 
 # Pagination settings
 paginate: 5                           # number of posts to show per page
-paginate_path: "/articles/page:num/"  # link scheme for articles, should be letf as is
+paginate_path: "/blog/page:num/"  # link scheme for articles, should be letf as is
 
 # Navigation settings
 # Used to define the navigation menu items
 # > Title is the tile of the navigation item, url the url and desc is the tooltip
 navigation:
-  - title: Projects
-    url: /projects/
-    desc: Personal Projects
-  - title: Articles
-    url: /articles/
-    desc: Blog
-  - title: Work
-    url: /work/
-    desc: Work Experience
   - title: About
     url: /about/
     desc: About Sameer
+  - title: Projects
+    url: /projects/
+    desc: Personal Projects
+  - title: Music
+    url: /music/
+    desc: Music
+  # - title: Work
+  #   url: /work/
+  #   desc: Work Experience
+
 
 # Used by Jekyll to recognize what is a post and what is a page
 defaults:
