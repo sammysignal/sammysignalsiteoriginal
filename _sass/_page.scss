@@ -8,7 +8,7 @@
 .post-content,
 .page-content {
 
-  p, ul, ol { margin-bottom: 1.3rem; }
+  p, ul, ol { margin-bottom: 0.5 rem; }
 
   p+ul { margin-top: -$spacer0; }
 
@@ -32,10 +32,10 @@
 
   .post-content,
   .page-content {
-    font-size: $fs-md;
+    font-size: 13pt;
     line-height: $lh-md;
 
-    p, ul, ol { margin-bottom: $spacer1; }
+    p, ul, ol { margin-bottom: $spacer; }
 
     h2 {
       margin-top: $spacer4;

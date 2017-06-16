@@ -23,7 +23,7 @@
 }
 
 .site-nav {
-  width: 86%;
+  width: 30%;
 }
 
 .site-logo:hover {
@@ -33,4 +33,23 @@
 
 .site-footer {
   margin: 3rem 0 6rem;
+}
+
+.lead.pretty-links {
+  margin-top:20px;
+}
+
+.site-profile {
+  width: 184px;
+  margin: 0 0 0 20px;
+}
+
+#asterisk {
+  color: #4072AF;
+  text-decoration: none;
+  background: none;
+}
+
+#ai-and-game-playing {
+  color: #333;
 }

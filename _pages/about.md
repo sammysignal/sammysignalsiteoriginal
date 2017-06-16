@@ -5,74 +5,90 @@ title: About
 desc: About me.
 permalink: /about/
 ---
-<p>Coming soon!</p>
-<!-- <div class="pretty-links">
+<div class="pretty-links">
 
-<div class="lead lead-about">Some intro text that is eye catching and should put you reader at ease and confident in your skills.
+<div class="lead lead-about">
+  I enjoy learning about Computation by applying my knowledge to games.
+  In my free time I enjoy music and comedy.
 </div>
 
-{::nomarkdown} 
+{::nomarkdown}
 <figure class="site-profile">
-    <img src="{{ site.baseurl }}/assets/img/profile.png">
+    <img src="{{ site.baseurl }}/assets/img/turingMachine.gif">
 </figure>
 {:/}
 
-Neve aethere orbe hic *virginis trunco* in spreto diuque latarumque, mea? Ultima
-sulcum antris conlapsosque potiere curvat Phasias superas adpulit vertex est
-Elei est fumificisque, puniceo? Et dulcis me Argo precibus: haec blanditiae
-[candida](http://murmure.org/.html).
+I recently graduated from Harvard University (B.A. Computer Science, 2017). There
+I took classes in Systems, Functional Programming, Machine Learning and Artificial Intelligence.
+
+Below are a few of my academic interests, as well as descriptions of some of my hobbies.
 
 ---
 
-## Quem fata quamvis
+### Computation
 
-Remisit terrae illud praetendat quod inplicat inter. Volvitur tum, naiades et
-sublimis conde!
+#### Chess
 
-Captum ligno nepotum arisque dimittere
-[maternaque](http://estumectat.net/fugae). Quae maior Typhoeus ramis huius aura
-deprendit instat hirsuta. Miserrima inque: tibi qua, ultimus a Agaue vallibus
-dictos.
+Games might not seem very useful endeavor with regards to real-world applications.
+ However, the same algorithms that we use to solve turn-based games can also help us 
+ accomplish important 21st century tasks, like programming a robot to move, or
+ providing TV show recommendations.
 
-1. Perseus est
-2. O Osiris accedat
-3. Repetita usum
+ As a simple{::nomarkdown}<sup><a id="asterisk" href="https://www.reddit.com/r/askscience/comments/mwoaw/is_it_possible_to_program_an_unbeatable_chess/c34h9gk/"><em style="font-size:9pt; text-decoration: none;">*</em></a></sup>{:/} example, Chess is a game that has been around 
+ for centuries and has simple rules - yet it took until 1997 for a computer to beat the best chess
+ grandmasters at their own game. These days, algorithms can run in one or two seconds
+ and utterly obliterate even the best human competitors.
 
-Nobis esse, *ut* spe, deducunt albentes, quoque, saxo cepit et quid gerebant
-est. Magnae haec quod, iugeribus gemmata. Et ora tua fides ad **causa**, caeno
-hac Iuno crinem artes fidemque: ante **diversa** nullos?
+ Chess teaches us to deal with problems that are intractable - problems for which it is impossible to 
+ find a theoretically perfect solution in a 'reasonable' amount of time. Although the number of chess 
+ games is theoretically finite, there are so many combinations that no computer will ever be able to 
+ find the absolute 'best' move before the sun turns into a red giant and engulfs our planet.
 
-## Si leti tegit undis quam
+ Because of this conundrum, chess-playing algorithms can only search a few moves ahead and approximate
+ how good a position this is. This method employs an algorithm called 'minimax', in which one player
+ is trying to maximize the 'value' of the board, and the other player is trying to minimize this 'value'. You can try to beat my implementation [here](/chess/).
 
-Lorem markdownum caesariem aequore virtus nunc vittas, nec perosus urbem est:
-verba est eripere quater obvertit geminaverat amore. Ac freto. Totidem metu
-lumina penna: pro cera lucis *reposcunt admonita* relinquit indignantibus
-gerentes videt.
+#### Theory - Differential Privacy
 
-Et **mixtos alium** adiacet ordine, vidisse nurus: vestem. *Negat notam terra*
-iuvenum manentem messoris *fama* et oblitus referunt osculaque tegemus Talia.
-Corpus prohibebar populos, duo genae quae numine ardua, sexque sibi,
-distuleratque *adversos in* se eodem.
+Differential Privacy is a field that deals with data anonymization. An important problem we 
+face is that for some databases, we only want to return aggregate queries (queries about the entire database) while maintaining anonymity for each individual entry. 
 
-- Poenas caput
-- Apud placato in extemplo inmemores ambit
-- Mea Cnosiaci atria nascendi sanguis inanem leonis
-- Se versis si Iasonis artis cepit et
-- Senes in idem tegmina
+I have done some preliminary research on this field because it is heavily related to NP-complete
+problems. Following research with Dr. Salil Vadhan at Harvard, I have been independently interested in proving the complexity of a highly related problem known as 'Partial Discrepancy'. By showing that
+problems like this are NP-complete, we can show that there will never exist an efficient algorithm 
+to de-anonymize a sparse database using only aggregate queries (assuming &ne; NP).
+See [This blog post](https://windowsontheory.org/2012/09/05/from-discrepancy-to-privacy-and-back/) by Kunal Talwar for more information on the status of this problem.
 
-Ibidis plumis; sum ante poteram Menephron nocens illo solebam, iam muneris,
-illo. Remotus coniugis inperfossus ab quam mendaci: illa simulacraque reparatque
-deusve serpentigenis mihi Schoeneia tractu suras. Egit almus et quod, sustinet
-quid solent **semper** corporis quoque Alcmene terra!
 
 ---
 
-## Abit inque et palato sibila telorum at
+### Music
 
-Lorem markdownum mirabatur haut, non morte, nisi et sepulcro Exigit, est, per
-illa iusserat memorabile. Pater damus multa, in lucosque carent oculis adsum
-miseris. Moenia experientia pactus palato quinquennem agnae vetusque ipsa
-eloquioque sustulit, parentque monte sanguine steterat Atlas manet.
+#### Jazz
 
-</div>
- -->
+In my free time I like to play and listen to Jazz music. I am a trumpet player and I played for
+the Harvard Jazz band while in college. In addition, I am a former radio host of [WHRB Cambridge, 95.3FM](http://www.whrb.org/), where I hosted my own Jazz radio show for two hours a week.
+
+#### Mariachi
+
+{::nomarkdown}
+<figure class="site-profile">
+    <img src="{{ site.baseurl }}/assets/img/mariachi.jpg">
+</figure>
+{:/}
+
+Mariachi is a traditional music style that originated in Mexico and has spread to greater Latin America.
+ I have played trumpet for the [Harvard Mariachi](http://fb.me/MariachiVeritasdeHarvard) band, where I
+ was able to share this unique and beloved music style with the greater Boston area.
+
+<p>&nbsp;</p>
+---
+
+### Comedy
+
+In my free time, I also enjoy writing and listening to various types of comedy. Whether it be TV, 
+ written humor, or stand-up comedy, I love to laugh. I myself am an amateur stand-up comedian and
+ I am excited to share my puns with anyone who is willing to listen.
+
+
+
